@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities"; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    body {
+        @apply text-gray-600;
+    }
+
+    h1 {
+        @apply text-3xl text-blue-900 font-bold;
+    }
+
+    h2 {
+        @apply text-2xl text-blue-900 font-bold;
+    }
+
+    h3 {
+        @apply text-lg text-gray-900;
+    }
+
+    ol {
+        @apply list-decimal list-inside
+    }
+
+    ul {
+        @apply list-disc list-inside;
+    }
+
+    /* The following CSS is not working in production but working dev.
+    Commented out for the moment in case we find a solution in the future. */
+    /* :disabled {
+        @apply opacity-40 cursor-not-allowed;
+    } */
+
+    .btn {
+        @apply py-3 px-6 rounded-3xl shadow-md text-center uppercase;
+    }
+
+    .btn-sm {
+        @apply text-xs;
+    }
+
+    .btn-primary {
+        @apply bg-secondary text-primary;
+    }
+
+    .btn-secondary {
+        @apply bg-white text-secondary;
+    }
+
+    .btn-info {
+        @apply bg-info text-gray-800;
+    }
+}

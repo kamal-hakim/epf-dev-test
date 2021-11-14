@@ -1,0 +1,65 @@
+<div class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+  <div class="relative w-full my-6 mx-auto max-w-6xl">
+    <!--content-->
+    <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full h-screen md:h-full bg-white outline-none focus:outline-none">
+      <div class="relative p-6 w-full flex flex-col">
+        <div class="flex justify-between items-center">
+          <h1>Location Details</h1>
+          <span class="text-gray-500 text-3xl cursor-pointer hidden md:block" (click)="closeModal()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </span>
+        </div>
+        <h3>Map</h3>
+      </div>
+      <div class="w-full h-56 bg-green-500 overflow-hidden">
+        <!-- maps goes here -->
+        <google-map
+          width="100%"
+          height="100%"
+          [center]="center"
+        ></google-map>
+      </div>
+      <div class="flex flex-col md:flex-row p-6">
+        <div class="w-full md:w-3/5 space-y-3">
+          <h3>Information</h3>
+          <div class="flex text-left text-xs">
+            <p class="w-2/5">Address</p>
+            <p class="w-3/5">{{ office.ads }}</p>
+          </div>
+          <div class="flex text-left text-xs">
+            <p class="w-2/5">Distance from your location</p>
+            <p class="w-3/5">{{ printDistanceUnit(office.distance) }}</p>
+          </div>
+          <div class="flex text-left text-xs">
+            <p class="w-2/5">Fax No.</p>
+            <p class="w-3/5">{{ office.fax }}</p>
+          </div>
+          <div class="flex text-left text-xs">
+            <p class="w-2/5">Operation Hours</p>
+            <span class="w-3/5">
+              <p class="font-bold">Pejabat</p>
+              <br> Isnin – Jumaat: 8.00AM - 5.00PM
+              <br> Office, Kiosk, RAS
+              <br> <p class="font-bold">Kaunter</p>
+              <br> Isnin – Jumaat: 8.30AM - 4.30PM
+              <br> Rehat Jumaat: 12.15PM - 2.45PM
+            </span>
+          </div>
+          <div class="flex text-left text-xs">
+            <p class="w-2/5">Services</p>
+            <p class="w-3/5">Office, Kiosk, RAS</p>
+          </div>
+        </div>
+        <div class="w-full md:w-2/5 md:relative">
+          <div class="absolute -bottom-2 left-0 right-0 h-16 flex justify-center items-center space-x-0 md:space-x-3">
+            <button type="button" class="bg-gray-300 md:bg-white rounded-none md:rounded-2xl p-3 w-full text-gray-700 text-sm" (click)="closeModal()">Close</button>
+            <button type="button" class="bg-primary rounded-none md:rounded-2xl p-3 w-full text-white text-sm">Open in Maps</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="opacity-25 fixed inset-0 z-40 bg-black"></div>
